@@ -3,15 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>lab1</title>
+    <link rel="stylesheet" href="style-sheet.css"></link>
 </head>
 <body>
-    <header>
-        <h2 class="header">ФАМИЛИЯ ИМЯ</h2>
-        <h2 class="header">P32302</h2>
-        <h2 class="header">3112</h2> 
-    </header>
-    
-        
-    </div> 
+<header>
+    <h2 class="header">ФАМИЛИЯ ИМЯ</h2>
+    <h2 class="header">P32302</h2>
+    <h2 class="header">3112</h2>
+</header>
+<div class="action-area">
+    <div class="action-area__left-subarea">
+        <div class="action-area__output">
+            <div class="example"></div>
+            <p>There is a field with coordinate field</p>
+        </div>
+        <div class="action-area__input">
+            <form>
+                <label>X coordinate:
+                    <input type="radio" id="-5" name="xValue" value="-5">
+                    <label for="-5">-5</label>
+                    <input type="radio" id="-4" name="xValue" value="-4">
+                    <label for="-4">-4</label>
+                    <input type="radio" id="-3" name="xValue" value="-3">
+                    <label for="-3">-3</label>
+                    <input type="radio" id="-2" name="xValue" value="-2">
+                    <label for="-2">-2</label>
+                    <input type="radio" id="-1" name="xValue" value="-1">
+                    <label for="-1">-1</label>
+                    <input type="radio" id="0" name="xValue" value="0" checked>
+                    <label for="0">0</label>
+                    <input type="radio" id="1" name="xValue" value="1">
+                    <label for="1">1</label>
+                    <input type="radio" id="2" name="xValue" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="3" name="xValue" value="3">
+                    <label for="3">3</label>
+                </label>
+                <label>Y coordinate: <input type="text" name="yValue" placeholder="Insert number from '-5' to '3'" alt="Поле ввода координаты Игрек"></label>
+                <label>R value: <input type="text" name="rValue" placeholder="Insert number from '1' to '4'" alt="Поле выбора радиуса"></label>
+                <label for="button"><input id="button" type="submit" value="Send"></label>
+            </form>
+        </div>
+    </div>
+    <div class="action-area__right-subarea">
+        <div class="action-area__history-table">
+            <p>There is a table with results and time/date</p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
