@@ -1,0 +1,20 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "php -S localhost:5001 C:\\Users\\artem\\Documents\\web\\lab1\\server.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artemiyjjj/Web-lab1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artemiyjjj/Web-lab1/issues"
+  },
+  "homepage": "https://github.com/artemiyjjj/Web-lab1#readme"
+}
