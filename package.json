@@ -2,7 +2,7 @@
   "name": "lab1",
   "version": "1.0.0",
   "description": "",
-  "main": "validator.js",
+  "main": "js-applications/validator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "php -S localhost:5001 C:\\Users\\artem\\Documents\\web\\lab1\\server.php"
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/artemiyjjj/Web-lab1/issues"
   },
-  "homepage": "https://github.com/artemiyjjj/Web-lab1#readme"
+  "homepage": "https://github.com/artemiyjjj/Web-lab1#readme",
+  "dependencies": {
+    "d3": "^7.6.1"
+  }
 }

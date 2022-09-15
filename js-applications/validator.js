@@ -50,10 +50,10 @@ submitButton.onclick = function(e) {
         }
         request()
             .then(response => {
-            if (response.ok) {
-                return response.text();
-            }
-        })
+                if (response.ok) {
+                    return response.text();
+                }
+            })
             .then(data => console.log(data));
     }
 }
@@ -62,4 +62,3 @@ form.oninput = function () {
     yInput.style.background = "white";
     rInput.style.background = "white";
 }
-

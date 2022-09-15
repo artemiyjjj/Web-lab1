@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>lab1</title>
     <link rel="stylesheet" href="style-sheet.css"></link>
+<!--    <script src="https://d3js.org/d3.v4.min.js"></script>-->
 </head>
 <body>
 <header>
@@ -14,8 +15,9 @@
 <div class="action-area">
     <div class="action-area__left-subarea">
         <div class="action-area__left-subarea__output">
-            <div class="example"></div>
-            <p>There is a field with coordinate field</p>
+            <div class="action-area__left-subarea__output__graphic">
+                <img src="areas.png">
+            </div>
         </div>
         <div class="action-area__left-subarea__input">
             <form name="inputValues">
@@ -39,21 +41,35 @@
                     <input type="radio" id="X=3" name="xValue" value="3">
                     <label for="X=3">3</label>
                 </label>
-                <label>Y coordinate: <input type="text" required name="yValue" value="1" placeholder="Insert number from '-5' to '3'" alt="Поле ввода координаты Игрек"></label>
-                <label>R value: <input type="text" required name="rValue" value="1" placeholder="Insert number from '1' to '4'" alt="Поле выбора радиуса"></label>
-                <label for="button"><button id="button" name="submitButton">efefef</button></label>
+                <label>Y coordinate: <input type="text" required name="yValue" value="1"
+                                            placeholder="Insert number from '-5' to '3'"
+                                            alt="Поле ввода координаты Игрек"></label>
+                <label>R value: <input type="text" required name="rValue" value="1"
+                                       placeholder="Insert number from '1' to '4'" alt="Поле выбора радиуса"></label>
+                <label for="button-send">
+                    <button id="button-send" name="submitButton">Send</button>
+                </label>
             </form>
         </div>
     </div>
     <div class="action-area__right-subarea">
         <div class="action-area__right-subarea__history-table">
-            <div class="action-area__right-subarea__history-table__header"><h3>Result</h3><h3>Time</h3><h3>Execution</h3></div>
-            <div class=action-area__right-subarea__history-table__elem><p>true</p><p>20:45</p><p>0.0223</p></div>
-            <div class=action-area__right-subarea__history-table__elem>There is an elem with results and time/date</div>
-
+            <table>
+                <thead>
+                <tr>
+                    <th>Coordinates</th>
+                    <th>Result</th>
+                    <th>Time</th>
+                    <th>Execution</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <!--            <div class="action-area__right-subarea__history-table__header"><h3>Coordinates</h3><h3>Result</h3><h3>Time</h3><h3>Execution</h3></div>-->
         </div>
     </div>
 </div>
-<script src="validator.js"></script>
+<script src="js-applications/validator.js"></script>
 </body>
 </html>

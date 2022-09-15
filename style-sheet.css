@@ -42,10 +42,26 @@ header > h2 {
     border: 3px ridge white;
 }
 
+.action-area__left-subarea__output__graphic {
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    width: 800px;
+    height: 400px;
+}
+
+.action-area__left-subarea__output__graphic > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .action-area__right-subarea {
     width: 35%;
+    height: content-box;
 }
-@media (max-width:1080px) {
+@media (max-width:1265px) {
     .action-area {
         display: flex;
         flex-direction: column;
@@ -55,31 +71,40 @@ header > h2 {
         width: 100%;
     }
 }
+
 .action-area__right-subarea__history-table {
-    overflow: hidden auto;
-    height: fit-content;
-    min-width: fit-content;
-    display: flex;
-    flex-direction: column;
-}
-
-.action-area__right-subarea__history-table > div {
     width: 100%;
-    border: 1px solid white;
-    margin: 1px 0px 1px 0px;
-    display: flex;
-    justify-content: space-around;
+    overflow: hidden;
+
+    /*inline-size: min-content;*/
 }
 
-.action-area__right-subarea__history-table__header {
+/*.action-area__right-subarea__history-table > div {*/
+/*    width: 100%;*/
+/*    border: 1px solid white;*/
+/*    margin: 1px 0px 1px 0px;*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
 
+.action-area__right-subarea__history-table > table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
 }
-/*Поменять*/
-.example {
-    width: 800px;
-    height: 400px;
-    background: white;
+
+.action-area__right-subarea__history-table > table > tbody {
+    overflow-y: auto;
 }
+
+.action-area__right-subarea__history-table > table > tbody > tr > td,
+.action-area__right-subarea__history-table > table > thead > tr > th {
+    text-align: center;
+    padding: 5px 10px;
+    word-break: keep-all;
+}
+
 
 form > label {
     display: block;
