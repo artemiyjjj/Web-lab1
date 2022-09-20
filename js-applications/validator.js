@@ -40,7 +40,7 @@
                     body.append("x", xValue);
                     body.append("y", y.toString());
                     body.append("r", r.toString());
-                    return fetch("server.php", {
+                    return fetch("http://localhost:5001/server.php", {
                         method: 'POST',
                         body: body,
                         headers: {
@@ -52,12 +52,12 @@
                 request()
                     .then(response => {
                         if (response.ok) {
-                            return response.text();
+                            tbody.insertAdjacentHTML("beforeend", response.text());
                         }
-                    })
-                    .then(data => {
-                        console.log(data);
-                        tbody.insertAdjacentHTML("beforeend", data);
+                    },
+                    err => {
+                        console.log(err);
+                        alert(err);
                     });
             }
         }

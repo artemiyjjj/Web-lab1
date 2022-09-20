@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(92, 6, 6, 0.34);
+    background-color: #303E68;
     min-width: 950px;
 }
 
@@ -9,7 +9,7 @@ header,
 }
 
 header {
-    background-color: chocolate;
+    background-color: #F6B062;
     display: flex;
     margin: 15px 20px 15px 20px;
     padding: 10px 30px 10px 30px;
@@ -22,7 +22,7 @@ h2 {
 }
 
 header > h2 {
-    padding: 0px 30px 0px 30px;
+    padding: 0 30px 0 30px;
     text-align: center;
     width: 33%;
 }
@@ -31,6 +31,7 @@ header > h2 {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    background: #95a7d0;
 }
 
 .action-area__left-subarea {
@@ -103,6 +104,7 @@ header > h2 {
     text-align: center;
     padding: 5px 10px;
     word-break: keep-all;
+    background: #6784DD;
 }
 
 
