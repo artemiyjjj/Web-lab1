@@ -52,13 +52,14 @@
                 request()
                     .then(response => {
                         if (response.ok) {
-                            tbody.insertAdjacentHTML("beforeend", response.text());
+                            return response.text();
                         }
                     },
                     err => {
                         console.log(err);
                         alert(err);
-                    });
+                    })
+                    .then(data => tbody.insertAdjacentHTML("beforeend", data));
             }
         }
 
