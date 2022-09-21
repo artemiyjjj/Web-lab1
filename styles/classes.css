@@ -10,9 +10,11 @@ header,
 
 header {
     background-color: #F6B062;
-    display: flex;
-    margin: 15px 20px 15px 20px;
-    padding: 10px 30px 10px 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    grid-area: header;
 
 }
 
@@ -26,29 +28,35 @@ header > h2 {
     text-align: center;
     width: 33%;
 }
-.action-area {
-    display: flex;
+
+.wrapper {
+    display: grid;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    background: #95a7d0;
+    height: 95vh;
+    margin: auto auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    grid-template:
+        [row1-start] "header header header" 1fr [row1-end]
+        [row2-starrt] "main main main" 10fr [row2-end]
+        / 1fr;
+    gap: 10px 15px;
 }
 
-.action-area__left-subarea {
-    width: 100%;
+.action-area {
+    background-color: #303E68;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px 10px;
 }
 
-.action-area__left-subarea > div {
-    padding: 15px 20px 10px 20px;
-    border: 3px ridge white;
-}
-
-.action-area__left-subarea__output__graphic {
-    margin-left: auto;
-    margin-right: auto;
+.action-area__left-subarea__output {
+    grid-area: graphic;
     background: white;
-    width: 800px;
-    height: 400px;
+    grid-column: 1 / 6;
+    grid-row: 1 / 4
 }
 
 .action-area__left-subarea__output__graphic > img {
@@ -58,26 +66,43 @@ header > h2 {
     width: 50%;
 }
 
-.action-area__right-subarea {
-    width: 35%;
-    height: content-box;
+.action-area__left-subarea__input {
+    background: #95a7d0;
+    grid-area: input;
+    grid-column: 1 / 6;
+    grid-row: 4 / 6;
+    height: fit-content;
+    padding: 15px;
 }
-@media (max-width:1265px) {
-    .action-area {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .action-area__right-subarea {
-        width: 100%;
-    }
+
+.action-area__left-subarea__input > form {
+    display: grid;
+    gap: 30px 5px;
+    grid-template-rows: repeat(4, 1fr);
+    /*grid-template-columns: 1fr;*/
+    grid-auto-flow: column;
+    place-items: center;
 }
+
+.action-area__left-subarea__input__xInput,
+.action-area__left-subarea__input__yInput,
+.action-area__left-subarea__input__rInput,
+.action-area__left-subarea__input__send {
+    place-self: start;
+}
+
+/*.action-area__left-subarea__input > form > label {*/
+/*    grid-area: aaaa;*/
+/*    grid-columns: 1 / 4;*/
+/*}*/
 
 .action-area__right-subarea__history-table {
+    background: #95a7d0;
+    grid-area: results;
     width: 100%;
-    overflow: hidden;
-
-    /*inline-size: min-content;*/
+    overflow: hidden auto;
+    grid-column: 6 / 9;
+    grid-row: 1 / 6;
 }
 
 /*.action-area__right-subarea__history-table > div {*/
@@ -108,9 +133,20 @@ header > h2 {
 }
 
 
-form > label {
-    display: block;
-    margin: 8px auto 8px auto;
-}
+/*form > label {*/
+/*    display: block;*/
+/*    margin: 8px auto 8px auto;*/
+/*}*/
+
+/*@media (max-width:1265px) {*/
+/*    .action-area {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        width: 100%;*/
+/*    }*/
+/*    .action-area__right-subarea {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
 
 

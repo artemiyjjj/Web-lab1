@@ -7,13 +7,13 @@
 <!--    <script src="https://d3js.org/d3.v4.min.js"></script>-->
 </head>
 <body>
-<header>
-    <h2 class="header">Романов Артемий</h2>
-    <h2 class="header">P32302</h2>
-    <h2 class="header">3112</h2>
-</header>
-<div class="action-area">
-    <div class="action-area__left-subarea">
+<div class="wrapper">
+    <header>
+        <h2 class="header">Романов Артемий</h2>
+        <h2 class="header">P32302</h2>
+        <h2 class="header">3112</h2>
+    </header>
+    <div class="action-area">
         <div class="action-area__left-subarea__output">
             <div class="action-area__left-subarea__output__graphic">
                 <img src="areas.png">
@@ -21,7 +21,7 @@
         </div>
         <div class="action-area__left-subarea__input">
             <form name="inputValues">
-                <label>X coordinate:
+                <label class="action-area__left-subarea__input__xInput">X coordinate:
                     <input type="radio" id="X=-5" name="xValue" value="-5">
                     <label for="X=-5">-5</label>
                     <input type="radio" id="X=-4" name="xValue" value="-4">
@@ -41,18 +41,16 @@
                     <input type="radio" id="X=3" name="xValue" value="3">
                     <label for="X=3">3</label>
                 </label>
-                <label>Y coordinate: <input type="text" required name="yValue" value="1"
+                <label class="action-area__left-subarea__input__yInput">Y coordinate: <input type="text" required name="yValue" value="1"
                                             placeholder="Insert number from '-5' to '3'"
                                             alt="Поле ввода координаты Игрек"></label>
-                <label>R value: <input type="text" required name="rValue" value="1"
+                <label class="action-area__left-subarea__input__rInput">R value: <input type="text" required name="rValue" value="1"
                                        placeholder="Insert number from '1' to '4'" alt="Поле выбора радиуса"></label>
-                <label for="button-send">
+                <label class="action-area__left-subarea__input__send" for="button-send">
                     <button id="button-send" name="submitButton">Send</button>
                 </label>
             </form>
         </div>
-    </div>
-    <div class="action-area__right-subarea">
         <div class="action-area__right-subarea__history-table">
             <table>
                 <thead>
