@@ -6,33 +6,40 @@ if (isset($_POST["r"]) && isset($_POST["x"]) && isset($_POST["y"])) {
         $x = $_POST["x"];
         $y = $_POST["y"];
         $r = $_POST["r"];
-        $x = (float) $x;
-        $y = (float) $y;
-        $r = (float) $r;
 
-        if (gettype($x) == "double" && gettype($y) == "double" && gettype($r) == "double") {
-            if ($x >= -5 && $x <= 3 && $y >= -5 && $y <= 3 && $r >= 1 && $r <= 4) {
-                $isHit = hit($x, $y, $r) ? "hit" : "miss";
-                $currentTime = gmDate("H:i:s", time() + 3600 * (3 + date("I")));
-                $execution_time = ceil((microtime(true) - $script_start) * 100000000) / 100;
-                echo "
-            <tr>
-            <td>X: $x; Y: $y; R: $r</td>
-            <td>$isHit</td>
-            <td>$currentTime</td>
-            <td>$execution_time ms</td>
-            </tr>
-            ";
+        if (strlen((string)abs($x)) < 8 && strlen((string)abs($y)) < 8 && strlen((string)abs($r)) < 8) {
+            $x = (float) $x;
+            $y = (float) $y;
+            $r = (float) $r;
+
+            if (gettype($x) == "double" && gettype($y) == "double" && gettype($r) == "double") {
+                if ($x >= -5 && $x <= 3 && $y >= -5 && $y <= 3 && $r >= 1 && $r <= 4) {
+                    $isHit = hit($x, $y, $r) ? "hit" : "miss";
+                    $currentTime = gmDate("H:i:s", time() + 3600 * (3 + date("I")));
+                    $execution_time = ceil((microtime(true) - $script_start) * 100000000) / 100;
+                    echo "
+                <tr>
+                <td>X: $x; Y: $y; R: $r</td>
+                <td>$isHit</td>
+                <td>$currentTime</td>
+                <td>$execution_time ms</td>
+                </tr>
+                ";
+                }
+                else {
+                    http_response_code(400);
+                    echo "Values are out of valid range.";
+                    exit(400);
+                }
             }
             else {
                 http_response_code(400);
-                echo "Values are out of valid range.";
+                echo "Incorrect data.";
                 exit(400);
             }
-        }
-        else {
+        } else {
             http_response_code(400);
-            echo "Incorrect data.";
+            echo "Too much digits for float number. Possibility of overflow.";
             exit(400);
         }
 }
