@@ -7,6 +7,10 @@ if (isset($_POST["r"]) && isset($_POST["x"]) && isset($_POST["y"])) {
     $y = $_POST["y"];
     $r = $_POST["r"];
 
+    $r = correctZero($r);
+    $y = correctZero($y);
+    $x = correctZero($x);
+
     if (getFloatLength($x) < 8 && getFloatLength($y) < 8 && getFloatLength($r) < 8) {
         $x = (float)$x;
         $y = (float)$y;
@@ -77,5 +81,13 @@ function getFloatLength($num): int
 {
     $array = explode(".", (string)$num);
     return array_key_exists(1, $array) ? strlen($array[1]) : 0;
+
+}
+
+function correctZero($num) {
+	if ($num == "-0") {
+		$num = 0;
+	}
+	return $num;
 }
 
