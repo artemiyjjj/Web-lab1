@@ -41,11 +41,9 @@
                     changeState(rInput);
                 }
             } else if (((!isNaN(yValue)) && !isNaN(rValue)) && (yValue >= Y_MIN_VALUE && yValue <= Y_MAX_VALUE) && (rValue >= R_MIN_VALUE || rValue <= R_MAX_VALUE)) {
-                request()
+                request({xValue, yValue, rValue})
                     .then(response => {
-                            if (response.ok) {
-                                return response.text();
-                            }
+                            if (response.ok) { return response.text(); }
                         },
                         err => {
                             console.log(err);
@@ -55,9 +53,7 @@
             }
         }
 
-
-
-        function request() {
+        function request({xValue, yValue, rValue}) {
             let body = new FormData();
             body.append("x", xValue);
             body.append("y", yValue);
