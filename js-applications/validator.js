@@ -43,7 +43,7 @@
             } else if (((!isNaN(yValue)) && !isNaN(rValue)) && (yValue >= Y_MIN_VALUE && yValue <= Y_MAX_VALUE) && (rValue >= R_MIN_VALUE || rValue <= R_MAX_VALUE)) {
                 request({xValue, yValue, rValue})
                     .then(response => {
-                            if (response.ok) { return response.text(); }
+                            if (response.status == 200) { return response.text(); }
                         },
                         err => {
                             console.log(err);

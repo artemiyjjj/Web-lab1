@@ -32,7 +32,7 @@ header > h2 {
 .wrapper {
     display: grid;
     width: 90%;
-    height: 95vh;
+    height: calc(100vh - 30px);
     margin: auto auto;
     padding-top: 15px;
     padding-bottom: 15px;
